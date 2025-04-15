@@ -17,8 +17,8 @@ docker exec spark-master apk add --no-cache make automake gcc g++ python3-dev li
 docker exec spark-master pip3 install psutil
 
 
-docker exec spark-master /spark/bin/spark-submit --master spark://spark-master:7077 /tmp/main.py -d $DATA_PATH | tail -n 6 >> one_node.txt
-docker exec spark-master /spark/bin/spark-submit --master spark://spark-master:7077 /tmp/main.py -d $DATA_PATH -o | tail -n 6 >> one_node_opt.txt
+docker exec spark-master /spark/bin/spark-submit --master spark://spark-master:7077 /tmp/main.py -d $DATA_PATH | tail -n 6 >> res_one_node.txt
+docker exec spark-master /spark/bin/spark-submit --master spark://spark-master:7077 /tmp/main.py -d $DATA_PATH -o | tail -n 6 >> res_one_node_opt.txt
 
 
 docker-compose stop
@@ -35,8 +35,8 @@ docker cp ./src/main.py spark-master:/tmp/main.py
 docker exec spark-master pip3 install psutil
 
 
-docker exec spark-master /spark/bin/spark-submit --master spark://spark-master:7077 /tmp/main.py -d $DATA_PATH | tail -n 6 >> three_node.txt
-docker exec spark-master /spark/bin/spark-submit --master spark://spark-master:7077 /tmp/main.py -d $DATA_PATH -o | tail -n 6 >> three_node_opt.txt
+docker exec spark-master /spark/bin/spark-submit --master spark://spark-master:7077 /tmp/main.py -d $DATA_PATH | tail -n 6 >> res_three_node.txt
+docker exec spark-master /spark/bin/spark-submit --master spark://spark-master:7077 /tmp/main.py -d $DATA_PATH -o | tail -n 6 >> res_three_node_opt.txt
 
 
 docker-compose stop
