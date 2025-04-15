@@ -1,3 +1,5 @@
+#!/bin/bash
+
 FILE="steambans.csv"
 DATA_PATH="hdfs://namenode:9000/data/steambans.csv"
 
