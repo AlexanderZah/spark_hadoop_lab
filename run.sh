@@ -12,7 +12,8 @@ docker exec namenode hdfs dfs -put -f ./data/$FILE /data
 
 docker cp ./src/main.py spark-master:/tmp/main.py
 
-
+docker exec spark-worker-1 apk add --no-cache make automake gcc g++ python3-dev linux-headers
+docker exec spark-master apk add --no-cache make automake gcc g++ python3-dev linux-headers py3-pip
 docker exec spark-master pip3 install psutil
 
 
